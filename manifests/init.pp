@@ -36,9 +36,7 @@ class groovy (
     timeout => $timeout,
   }
 
-  package { 'unzip':
-    ensure => present,
-  }
+  ensure_packages ( ['unzip'], { ensure => present, } )
 
   file { $target:
     ensure => directory,
